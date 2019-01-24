@@ -1,0 +1,41 @@
+package pacakage1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Login {
+	
+	@Test
+	
+	public void startDriver() throws InterruptedException
+	{
+		
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\Chanchal\\chromedriver.exe");
+		WebDriver d=new ChromeDriver();
+		
+		d.get("https://envelopes-trade.streammarket.co.uk/");
+		d.manage().window().maximize();
+		
+		d.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div[1]/a")).click();
+		Thread.sleep(2000);
+	WebElement e=	d.findElement(By.xpath("/html/body/div[3]/header/div[2]/div/div[1]/ul/li[2]/a"));
+		if(e.isEnabled())
+		{
+			e.click();
+		}
+		else
+		{
+			System.out.println("Element not found");
+		}
+		
+		d.findElement(By.id("email")).sendKeys("chanchal@streammarket.co.uk");
+		d.findElement(By.id("pass")).sendKeys("stream@123");
+		d.findElement(By.xpath("//*[@id=\"send2\"]")).click();
+		
+	}
+	
+}

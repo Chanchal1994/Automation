@@ -1,0 +1,23 @@
+package pacakage1;
+
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
+
+public class TestFirefoxGrid {
+	
+	@Test
+	
+	public void test1()
+	{
+		
+		DesiredCapabilities cap= DesiredCapabilities.firefox();
+		
+		cap.setPlatform(
+	}
+	
+	
+	
+	
+
+}
